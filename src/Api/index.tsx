@@ -20,7 +20,7 @@ function handleResp(response: any, status: 'success' | 'error') {
 export const login = async (credentials: { email: string; password: string }) => {
     try {
         const baseUrl = config.API_BASE_URL;
-        const respData = await axios.post(`${baseUrl}/admin/login`, credentials, {
+        const respData = await axios.post(`${baseUrl}/admin/tinvox/login`, credentials, {
             headers: { 'Content-Type': 'application/json' },
         });
         return handleResp(respData.data, 'success');
@@ -35,7 +35,8 @@ export const login = async (credentials: { email: string; password: string }) =>
 export const getPublicApiData = async (endpoint: string) => {
     try {
         const baseUrl = config.API_BASE_URL;
-        const respData = await axios.get(`${baseUrl}/${endpoint}`);
+        const cleanEndpoint = endpoint.startsWith('user/') ? endpoint.substring(5) : endpoint;
+        const respData = await axios.get(`${baseUrl}/tinvox/${cleanEndpoint}`);
         return handleResp(respData.data, 'success');
     } catch (error: any) {
         return handleResp(error.response?.data || error.message, 'error');
@@ -52,7 +53,7 @@ export const adminGet = async (endpoint: string) => {
         // Get token from localStorage
         const token = localStorage.getItem("trueLuckAdmin");
 
-        const respData = await axios.get(`${baseUrl}/admin/${endpoint}`, {
+        const respData = await axios.get(`${baseUrl}/admin/tinvox/${endpoint}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token
@@ -71,7 +72,7 @@ export const adminPost = async (endpoint: string, data: any) => {
         // Get token from localStorage
         const token = localStorage.getItem("trueLuckAdmin");
 
-        const respData = await axios.post(`${baseUrl}/admin/${endpoint}`, data, {
+        const respData = await axios.post(`${baseUrl}/admin/tinvox/${endpoint}`, data, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token
@@ -90,7 +91,7 @@ export const adminPut = async (endpoint: string, data: any) => {
         // Get token from localStorage
         const token = localStorage.getItem("trueLuckAdmin");
 
-        const respData = await axios.put(`${baseUrl}/admin/${endpoint}`, data, {
+        const respData = await axios.put(`${baseUrl}/admin/tinvox/${endpoint}`, data, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token
@@ -109,7 +110,7 @@ export const adminDelete = async (endpoint: string) => {
         // Get token from localStorage
         const token = localStorage.getItem("trueLuckAdmin");
 
-        const respData = await axios.delete(`${baseUrl}/admin/${endpoint}`, {
+        const respData = await axios.delete(`${baseUrl}/admin/tinvox/${endpoint}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token
@@ -134,7 +135,7 @@ export const adminUpload = async (file: File) => {
         const formData = new FormData();
         formData.append('file', file);
         
-        const respData = await axios.post(`${baseUrl}/admin/upload`, formData, {
+        const respData = await axios.post(`${baseUrl}/admin/tinvox/upload`, formData, {
             headers: {
                 'Authorization': token
             }

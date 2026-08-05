@@ -13,7 +13,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative h-[60vh] md:h-[80vh] w-full flex items-center justify-center">
         <Image
-          src={`${config.API_IMAGE_URL}/uploads/about-hero.jpg`}
+          src={`${config.API_IMAGE_URL}/uploads/tinvox/about-hero.jpg`}
           alt="About Hero"
           fill
           className="object-cover opacity-60 z-0"
@@ -61,7 +61,7 @@ export default function About() {
             <div className="relative h-[400px] lg:h-[600px] w-full max-w-md mx-auto">
               <div className="absolute inset-0 z-10 w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src={`${config.API_IMAGE_URL}/uploads/about-studio.jpg`}
+                  src={`${config.API_IMAGE_URL}/uploads/tinvox/about-studio.jpg`}
                   alt="Our Studio"
                   fill
                   className="object-cover"
