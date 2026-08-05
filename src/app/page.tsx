@@ -18,7 +18,7 @@ export default function Home() {
         playsInline
         className="fixed inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/bg-video.mp4" type="video/mp4" />
       </video>
 
       {/* Page Content Wrapper (z-10 sits above z-0 background video) */}
