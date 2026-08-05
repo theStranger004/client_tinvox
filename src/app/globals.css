@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f5efcf;
+  --color-gold-200: #eadc9f;
+  --color-gold-300: #dfc469;
+  --color-gold-400: #d5aa3c;
+  --color-gold-500: #c89228;
+  --color-gold-600: #ad721f;
+  --color-gold-700: #8b531a;
+  --color-gold-800: #75441b;
+  --color-gold-900: #64391a;
+  --color-gold-950: #391d0a;
+
+  --color-progreen-50: #f0fdf4;
+  --color-progreen-100: #dcfce7;
+  --color-progreen-200: #bbf7d0;
+  --color-progreen-300: #86efac;
+  --color-progreen-400: #4ade80;
+  --color-progreen-500: #22c55e;
+  --color-progreen-600: #16a34a;
+  --color-progreen-700: #15803d;
+  --color-progreen-800: #166534;
+  --color-progreen-900: #14532d;
+  --color-progreen-950: #052e16;
+
+  --font-playfair: var(--font-playfair-display), serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+@utility glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
