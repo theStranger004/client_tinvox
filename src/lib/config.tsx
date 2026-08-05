@@ -7,7 +7,7 @@ interface Config {
 
 let config: Config;
 
-let mode = "local"; // local || love
+let mode = "love"; // local || love
 
 if (mode === "local") {
   const API_URL = "http://localhost:2515/api";
