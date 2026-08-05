@@ -7,7 +7,7 @@ interface Config {
 
 let config: Config;
 
-let mode = "local"; // local || love
+let mode = "love"; // local || love
 
 if (mode === "local") {
   const API_URL = "http://localhost:2515/api";
@@ -21,9 +21,9 @@ if (mode === "local") {
     FRONTEND_URL,
   };
 } else {
-  const API_URL = "https://client-photography-backend.onrender.com/api";
-  const API_IMAGE = "https://client-photography-backend.onrender.com";
-  const FRONTEND_URL = "https://client-photography.onrender.com";
+  const API_URL = "https://client-tinvox-backend.onrender.com/api";
+  const API_IMAGE = "https://client-tinvox-backend.onrender.com";
+  const FRONTEND_URL = "https://client-tinvox.onrender.com";
 
   config = {
     API_BASE_URL: `${API_URL}`,
